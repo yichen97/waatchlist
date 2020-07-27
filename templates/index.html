@@ -3,18 +3,27 @@
     <!-- 主页模板 -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ name }}'s Watchlist</title>
+    <link rel="icon" class = "favicon" href="{{ url_for('static', filename = 'favicon.jpg')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}", type="text/css">
 </head>
 <body>
-    <h2>{{ name }}'s Watchlist</h2>
+    <h2>
+        <img src="{{ url_for('static', filename='images/dog-cat.jpg')}}" id="image1" alt="猫&狗">
+        {{ name }}'s Watchlist
+    </h2>
     {# 使用 length 过滤器获取 movie 变量的长度 #}
     <p>{{ movies|length}} Titles</p>
-    <ul>
+
+    <ul class = "movie-list">
         {% for movie in movies%} {# 迭代 movies 变量 #}
         <li>{{movie.title}} - {{ movie.year}}</li>  {# 等同于movie['title'] #}
         {% endfor %} {# 使用 endfor 标签结束 for 语句 #}
     </ul>
+
+    <img src="{{ url_for('static', filename='images/girls1.jpg')}}" id ="image2" alt="a girl">
+  
+    
     <footer>
         <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
     </footer>

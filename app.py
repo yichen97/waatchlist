@@ -3,7 +3,7 @@ from flask import url_for
 
 app = Flask(__name__)
 
-name = 'yichen'
+name = 'yision'
 movies = [
     {'title': 'My Neighbor Totoro', 'year': '1988'},
     {'title': 'Dead Poers Society', 'year': '1989'},
