@@ -1,11 +1,24 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask import url_for
 
 app = Flask(__name__)
 
+name = 'yichen'
+movies = [
+    {'title': 'My Neighbor Totoro', 'year': '1988'},
+    {'title': 'Dead Poers Society', 'year': '1989'},
+    {'title': 'A Perfect World', 'year': '1993'},
+    {'title': 'Leon', 'year': '1994'},
+    {'title': 'Mahjong', 'year': '1996'},
+    {'title': 'Swallowtail Butterfly', 'year': '1996'},
+    {'title': 'King of Comedy', 'year': '1996'},
+    {'title': 'Devils on the Doorstep', 'year': '1999'},
+    {'title': 'WALL-E', 'year': '2008'},
+    {'title': 'The Pork of Music', 'year': '2012'},
+    ]
 @app.route('/')
-def hello():
-    return 'Hello'
+def index():
+    return render_template('index.html', name = name, movies =movies)
 
 @app.route('/user/<name>')
 # <name>可以匹配关键字
@@ -26,3 +39,12 @@ def test_url_for():
 
 #  下面我们来分解这个Flask程序，了解它的基本构成。
    
+#    进阶提示
+# 对于 URL 变量，Flask 还支持在 URL 规则字符串里对变量设置处理器，对变
+# 量进行预处理。比如 /user/<int:number> 会将 URL 中的 number 部分处
+# 理成整型，同时这个变量值接收传入数字。
+
+# 名字以 . 开头的文件默认会被隐藏，执行 ls 命令时会看不到它们，这时
+# 你可以使用 ls -f 命令来列出所有文件。
+
+    # 定义数据
