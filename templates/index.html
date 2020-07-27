@@ -3,14 +3,14 @@
     <!-- 主页模板 -->
 <head>
     <meta charset="UTF-8">
-    <title>{{ name }}'s Watchlist</title>
+    <title>{{ user.name }}'s Watchlist</title>
     <link rel="icon" class = "favicon" href="{{ url_for('static', filename = 'favicon.jpg')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}", type="text/css">
 </head>
 <body>
     <h2>
         <img src="{{ url_for('static', filename='images/dog-cat.jpg')}}" id="image1" alt="猫&狗">
-        {{ name }}'s Watchlist
+        {{ user.name }}'s Watchlist
     </h2>
     {# 使用 length 过滤器获取 movie 变量的长度 #}
     <p>{{ movies|length}} Titles</p>
