@@ -2,18 +2,34 @@
 
 {% block content %}
     <p>{{ movies|length}} Titles</p>
+    <form method="post">
+        Name <input type="text" name="title" autocomplete="off" requ
+        ired>
+        Year <input type="text" name="year" autocomplete="off" requi
+        red>
+        <input class="btn" type="submit" name="submit" value="Add">
+    </form>
 
+      
     <ul class = "movie-list">
         {% for movie in movies%} {# 迭代 movies 变量 #}
         <li>{{movie.title}} - {{ movie.year}}
-            <span class = "font-right">
+            
+            <span class="float-right">
+                <a class="btn" href="{{ url_for('edit', movie_id=movie.id) }}">Edit</a>
+            
+
+            
+                <form class="inline-form"	method="post"	action="{{	url_for('delete',	movie_id=movie.id)	}}">
+                <input class="btn"	type="submit"	name="delete"	value="Delete"	onclick="return	confirm('Are you sure?')">
+            </form>
+            
+
+            
                 <a href="https://www.imdb.com/find?q={{ movie.title }}" class="imdb" target="_blank" title="Find this movie on IMDb">IMDb</a>
             </span>
         </li>  {# 等同于movie['title'] #}
         {% endfor %} {# 使用 endfor 标签结束 for 语句 #}
     </ul>
 
-<ul>
-    <img src="{{url_for('static', filename = 'images/girls2.jpg')}}" class='illustrtion' alt="a girl" title="what a pretty girl">
-</ul>
 {% endblock %}

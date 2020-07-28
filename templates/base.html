@@ -10,6 +10,9 @@
     {% endblock %}
 </head>
 <body>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
     <h2>
         <img src="{{ url_for('static', filename='images/dog-cat.jpg')}}" class='illustrtion' alt="猫&狗">
         {{ user.name }}'s Watchlist
@@ -21,6 +24,7 @@
     </nav>
     {% block content %}
     {% endblock %}
+
     <footer>
         <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
     </footer>
