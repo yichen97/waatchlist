@@ -72,14 +72,27 @@ def forge():
 
 @app.route('/')
 def index():
-    user = User.query.first()
     movies = Movie.query.all()
-    return render_template('index.html', user = user, movies =movies)
+    return render_template('index.html',  movies =movies)
+
+# 错误处理函数，返回值作为响应主题返回给客户端
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 @app.route('/user/<name>')
 # <name>可以匹配关键字
 def user_page(name = ''):
     return '<h1>新垣结衣</h1><br><br><img src = "https://picb.zhimg.com/80/v2-61c94da84dc86ed21512cc206cba701b_720w.jpg?source=1940ef5c"><br><br>'+'User: %s' %name
+
+# 这个函数返回的变量（以字典键值对的形式）将会统一注入到
+# 每一个模板的上下文环境中，因此可以直接在模板中使用
+# 取代404错误处理函数和主页视图函数中user变量定义，
+# 并删除在render_template()函数中传入的关键字参数
+@app.context_processor
+def inject_user():
+    user = User.query.first()
+    return dict(user=user)  #需要返回字典，等同于return {'user' :user}
 
 @app.route('/test')
 def test_url_for():
