@@ -88,6 +88,18 @@ nav li a:hover {
     /* 加一个边框，让它和“EDIT”和“DELETE”一个大小 */
     }
 
+.imdb:hover {
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    background: #F5C518;
+    border-radius: 5px;
+    padding: 3px 5px;
+    border: 2px solid  #000000;
+    /* 加一个边框，让它和“EDIT”和“DELETE”一个大小 */
+    }
+
 input[type='submit']{
     font-family: inherit;
 
@@ -114,10 +126,15 @@ input[name='year']{
 }
 
 .btn:hover{
+    font-size: 12px;
+    padding: 3px 5px;
+    margin: 0px 5px;
     text-decoration: none;
-    background-color: balck;
-    border: 1px solid balck;
-    color: white;
+    cursor :pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #bbbbbb;
+    border-radius: 5px;
 }
 
 .alert {
