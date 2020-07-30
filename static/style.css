@@ -85,19 +85,14 @@ nav li a:hover {
     border-radius: 5px;
     padding: 3px 5px;
     border: 1px solid  #F5C518;
-    /* 加一个边框，让它和“EDIT”和“DELETE”一个大小 */
     }
-
+ 
 .imdb:hover {
-    font-size: 12px;
-    font-weight: bold;
-    color: black;
     text-decoration: none;
-    background: #F5C518;
-    border-radius: 5px;
-    padding: 3px 5px;
-    border: 2px solid  #000000;
-    /* 加一个边框，让它和“EDIT”和“DELETE”一个大小 */
+    font-size: 12px;
+    background-color: #F5C518;
+    border: 1px solid #F5C518;
+    color: #F5C518;
     }
 
 input[type='submit']{
@@ -126,15 +121,10 @@ input[name='year']{
 }
 
 .btn:hover{
-    font-size: 12px;
-    padding: 3px 5px;
-    margin: 0px 5px;
     text-decoration: none;
-    cursor :pointer;
-    background-color: white;
-    color: black;
-    border: 2px solid #bbbbbb;
-    border-radius: 5px;
+    background-color: balck;
+    border: 1px solid balck;
+    color: white;
 }
 
 .alert {

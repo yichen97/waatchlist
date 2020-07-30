@@ -103,7 +103,7 @@ def admin(username, password):
         db.session.add(user)
 
     db.session.commit()
-    click.echo('Done')
+    click.echo('Done.')
 
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -141,7 +141,7 @@ def login():
 
         if username == user.username and user.validate_password(password):
             login_user(user)  # 登入用户
-            flash('Login success')
+            flash('Login success.')
             return redirect(url_for ('index'))
         
         flash('Invalid username or password.')
@@ -156,8 +156,8 @@ def settings():
         name = request.form['name']
 
         if not name or len(name) > 20:
-            flash('Invalid input')
-            return redirect(url_for('setting'))
+            flash('Invalid input.')
+            return redirect(url_for('settings'))
 
         current_user.name = name
         # current_user 会返回当前登录用户的数据库记录对象
@@ -168,7 +168,7 @@ def settings():
         flash('Settings updated.')
         return redirect(url_for('index'))
 
-    return render_template('Setting.html')
+    return render_template('Settings.html')
 
 @app.route('/logout')
 @login_required  # 用于保护视图
