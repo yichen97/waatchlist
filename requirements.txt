@@ -19,7 +19,7 @@ imbalanced-learn==0.6.2
 imblearn==0.0
 isort==4.3.21
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 joblib==0.14.1
 kiwisolver==1.1.0
 lazy-object-proxy==1.4.3
