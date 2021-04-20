@@ -33,7 +33,7 @@ packaging==20.3
 pandas==0.25.3
 pipenv==2020.6.2
 pluggy==0.13.1
-py==1.8.1
+py==1.10.0
 pygame==1.9.6
 pylint==2.5.3
 PyMySQL==0.9.3
